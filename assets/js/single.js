@@ -20,3 +20,21 @@
 var currentDay=$("#currentDay");
 var todaysDate = moment().toDate();
 currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
+
+// if the time = currentHour,
+    //display current task
+    // display alert, task
+    // red
+
+    // else if time < currentHour
+    // display completed task
+    // grey
+
+    // else time > currentHour
+    // display future task 
+    // green
+
+
+var currentHour = moment().toDate();
+currentDay.text(moment(tofd))
+
