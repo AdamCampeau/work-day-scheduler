@@ -19,33 +19,60 @@
 
 var currentDay=$("#currentDay");
 var todaysDate = moment().toDate();
+console.log(todaysDate)
 currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
 
-// create rows as cards
 
+
+// 
+// class
+// create rows as cards
+// 24 hour format
 // var dailyHours =moment(hour)
-    // between hours of 8am - 5pm
+    // between hours of 9 - 17
     // assign an hour per rom
     // timeBlock
-    
+    // for (i = 0)
+    // creating elements 9m - 5pm
+    // use logic from class work example
 
-// if the timeBlock = currentHour,
-    // present
+    /* <div class="row">
+        <div class ="col time-block card">
+          <div class="hour">
+            
+          </div>
+        </div>
     
-    // else if timeBlock < currentHour
-    // past
+        <div class="col-10 text-area card">
+          Task
+        </div>
+        <div class ="col">
+          <button class="saveBtn card"><i class="fas fa-save"></i>
+        </div>
+      </div>
+    */
+
+
+// if current hour, highlight current
+    //
+    //for
+        // if the timeBlock = currentHour,
+        // present
     
-    // else timeBlock > currentHour
-    // future
+        // else if timeBlock < currentHour
+        // past
     
+        // else timeBlock > currentHour
+        // future
+
 // event.listener "click", timeBlock
     // text area
     // save button, save timeBlock
 
-// save timeBlock to local storage
+// save data to local storage
      
 
 
-var currentHour = moment().toDate();
-currentDay.text(moment(tofd))
+//var currentHour = moment().toDate();
+// currentDay.text(moment(tofd))
 
