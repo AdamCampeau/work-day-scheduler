@@ -21,20 +21,28 @@ var currentDay=$("#currentDay");
 var todaysDate = moment().toDate();
 currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
 
+// create rows as cards
 
-// for 8am to 5pm
+// var dailyHours =moment(hour)
+    // between hours of 8am - 5pm
+    // assign an hour per rom
+    // timeBlock
+    
+
 // if the timeBlock = currentHour,
-    // display current task
-    // display alert, task
-    // red
-
+    // present
+    
     // else if timeBlock < currentHour
-    // display completed task
-    // grey
-
+    // past
+    
     // else timeBlock > currentHour
-    // display future task 
-    // green
+    // future
+    
+// event.listener "click", timeBlock
+    // text area
+    // save button, save timeBlock
+    // save timeBlock to local storage
+    // prevent default of page refresh 
 
 
 var currentHour = moment().toDate();
