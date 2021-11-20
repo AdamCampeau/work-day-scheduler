@@ -41,8 +41,9 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
 // event.listener "click", timeBlock
     // text area
     // save button, save timeBlock
-    // save timeBlock to local storage
-    // prevent default of page refresh 
+
+// save timeBlock to local storage
+     
 
 
 var currentHour = moment().toDate();

@@ -18,6 +18,9 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
@@ -31,20 +34,25 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
+      
       <!-- there is probably an easier way to do this -->
+      
+      <!-- Initial Block-->
       <div class="row">
-        <div class ="col">
+        <div class ="col time-block hour">
           8AM
         </div>
-        <div class="col-8">
+        <div class="col-8 text-area">
           Task
         </div>
         <div class ="col">
-          Save
+          <button class="saveBtn"><i class="fas fa-save"></i>
         </div>
       </div>
       <div class="row">
-        <div class ="col">
+      <!-- END -->
+      
+      <div class ="col">
           9AM
         </div>
         <div class="col-8">
