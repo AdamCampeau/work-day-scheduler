@@ -35,7 +35,29 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
     // for (i = 0)
     // creating elements 9m - 5pm
     // use logic from class work example
+    
+    /*
+    let str = '';
+    for (let i = 8; i < 15; i++) {
+    }*/
+var currentHour = moment().format('h a');
 
+    for (i = 8; i < 15; i++) {
+        console.log(i)
+    
+        if (currentHour == i) {
+            present;
+            
+        } else if 
+            (currentHour < i) {
+            past;
+        
+
+        } else if 
+            ( i > currentHour) {
+            future;
+         } 
+    }
     /* <div class="row">
         <div class ="col time-block card">
           <div class="hour">
