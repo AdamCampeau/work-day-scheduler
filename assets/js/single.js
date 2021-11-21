@@ -28,37 +28,21 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
 // class
 // create rows as cards
 // 24 hour format
-// var dailyHours =moment(hour)
-    // between hours of 9 - 17
-    // assign an hour per rom
-    // timeBlock
-    // for (i = 0)
-    // creating elements 9m - 5pm
-    // use logic from class work example
+// if for loop semantics
+// if current hour, highlight current
+    //
     
-    /*
-    let str = '';
-    for (let i = 8; i < 15; i++) {
-    }*/
-var currentHour = moment().format('h a');
+
+var i = moment().format('h a');
 
     for (i = 8; i < 15; i++) {
         console.log(i)
-    
-        if (currentHour == i) {
-            present;
-            
-        } else if 
-            (currentHour < i) {
-            past;
-        
 
-        } else if 
-            ( i > currentHour) {
-            future;
-         } 
-    }
-    /* <div class="row">
+        // dynnamically created content
+
+    /* ROW ORIGINAL CODE BLOCK
+    
+    <div class="row">
         <div class ="col time-block card">
           <div class="hour">
             
@@ -73,11 +57,25 @@ var currentHour = moment().format('h a');
         </div>
       </div>
     */
+        var buildRow = document.createElement('row');
+       
+            var buildCard = buildRow.createElement('col');
+            buildCard.classList.add('col time-block card');
 
+                var buildHour = buildCard.createElement('hour');   
+                buildHour.classList.add('hour');
+c
+            var buildText = buildRow.createElement('col-10');
+            buildText.classList.add('text-area card') 
 
-// if current hour, highlight current
-    //
-    //for
+                // create task input
+
+            var buildCard = buildRow.createElement('col');
+            
+                var buildSave = buildCard.createElement('button');
+                button.classList.add('saveBtn card')
+                
+        
         // if the timeBlock = currentHour,
         // present
     
@@ -86,6 +84,30 @@ var currentHour = moment().format('h a');
     
         // else timeBlock > currentHour
         // future
+    
+    /* i EXAMPLE
+        let str = '';
+        for (let i = 8; i < 15; i++) {
+        }*/
+    
+        if (currentHour == i) {
+            present;
+            
+        } else if 
+            (currentHour < i) {
+            past;
+        
+
+        } else if 
+            ( i > currentHour) {
+            future;
+        
+        
+         } 
+    }
+   
+
+
 
 // event.listener "click", timeBlock
     // text area
