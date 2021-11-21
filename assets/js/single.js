@@ -45,10 +45,11 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
         var buildCardA = $("<div>");
         buildCardA.addClass('col-md-1 hour-text');
         if(i<=12){
-          buildCardA.text(i + "AM")
+          buildCardA.text(i + " AM");
+          
         }
         else{
-          buildCardA.text((i-12) + "PM");
+          buildCardA.text((i-12) + " PM");
         }
 
         var buildHour = $('<textarea>');   
@@ -64,8 +65,8 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
             
         var buildSave = $('<button>');
         buildSave.addClass('saveBtn');
-        buildSave.text("Save");
         buildSave.attr("data-time", i);
+        buildSave.addClass("fas fa-save")
 
 
         $("#time-row").append(buildCardA, buildHour, buildSave);
