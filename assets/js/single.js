@@ -38,14 +38,15 @@ var currentHour = moment(currentHour).format('h');
 
     
 
-//var i = moment().format('h a');
-
+    //var i = moment().format('h a');
+    
+    // var buildRow = (
     for (var i = 8; i < 18; i++) {
         console.log(i)
-
+      
         // ROW
 
-        //var buildRow = document.createElement('row');
+        // var buildRow = document.createElement('row');
        
         //var buildCardA = buildRow.createElement('col');
         var buildCardA = $("<div>");
@@ -72,12 +73,14 @@ var currentHour = moment(currentHour).format('h');
         
         if (currentHour == i) {
          buildHour.addClass('present');
-          
+                                    
         } else if (currentHour < i) {
           buildHour.addClass('past');
+                
+          //buildSave.addClass('past');
           
         } else if (currentHour > i) {
-          buildHour.addClass('future'); 
+          buildCardA.addClass('past');
         } 
 
         // create task input
@@ -101,12 +104,14 @@ var currentHour = moment(currentHour).format('h');
         function myFunction() {
             alert ("Hello World!");
         }
-        
+      
         */
       // get local storage 
         // store task
-        
+        //</br>
+         
     }
+    
     
    
     $(document).on("click", ".saveBtn", function(){
@@ -114,10 +119,10 @@ var currentHour = moment(currentHour).format('h');
       var hour = $(this).attr("data-time");
       console.log(hour);
 
+      window.localStorage.setItem('buildSave', 'textarea');
+
       var t = $("#"+hour).val();
       console.log(t);
-
-      
 
       //crete an object with an hour and text
       //store that object in localStorage
@@ -126,24 +131,25 @@ var currentHour = moment(currentHour).format('h');
       // getItem needs setItem
     })
 
-    function local(){
-    localStorage.setItem("textarea");
+    // function saveStorage(){
+      //localStorage.setItem('textarea');
+    
         
         // retrieve task
-        document.getElementById("edit").innerHTML = localStorage.getItem("textarea")
+        //document.getElementById("edit").innerHTML = localStorage.getItem("textarea")
 
         // save task when saveBtn clicked
-        document.getElementById("saveBtn").addEventListener("click", "textarea");
+        //document.getElementById("saveBtn").addEventListener("click", "textarea");
 
-        buildRow.appendChild(buildCardA)
-        buildRow.appendChild(buildHour)
-        buildRow.appendChild(buildText)
-        buildRow.appendChild(buildCardB)
-        buildRow.appendChild(buildSave)
+    row.appendChild(buildCardA)
+    buildRow.appendChild(buildHour)
+    buildRow.appendChild(buildText)
+    buildRow.appendChild(buildCardB)
+    buildRow.appendChild(buildSave)
 
 
        
-}
+
 
     /* ROW ORIGINAL CODE BLOCK
     
