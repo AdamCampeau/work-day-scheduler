@@ -5,7 +5,13 @@ var todaysDate = moment().toDate();
 console.log(todaysDate)
 currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
 
-// var currentHour = moment().
+/* var currentHour=$("#currentHour");
+var thisHour = moment().toHour();
+console.log(thisHour)
+currentHour.text(moment(thisHour).format("h"));
+*/
+// var currentHour = today.getHours();
+var currentHour = moment(currentHour).format('h');
 // 24 hour format
 
 // if for loop 
@@ -44,6 +50,7 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
         //var buildCardA = buildRow.createElement('col');
         var buildCardA = $("<div>");
         buildCardA.addClass('col-md-1 hour-text');
+
         if(i<=12){
           buildCardA.text(i + " AM");
           
@@ -52,16 +59,32 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
           buildCardA.text((i-12) + " PM");
         }
 
+        
+        
+
         var buildHour = $('<textarea>');   
-        buildHour.addClass('col-md-10 time-block');
+        buildHour.addClass('col-md-9 time-block');
         buildHour.attr("id", i);
 
         //var buildText = buildRow.createElement('col-10');
         //buildText.classList.add('textarea card') 
+        
+        
+        if (currentHour == i) {
+         buildHour.addClass('present');
+          
+        } else if (currentHour < i) {
+          buildHour.addClass('past');
+          
+        } else if (currentHour > i) {
+          buildHour.addClass('future'); 
+        } 
 
         // create task input
 
+
         //var buildCardB = buildRow.createElement('col');
+        
             
         var buildSave = $('<button>');
         buildSave.addClass('saveBtn');
@@ -84,6 +107,7 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
         // store task
         
     }
+    
    
     $(document).on("click", ".saveBtn", function(){
       console.log("inside button click");
@@ -93,6 +117,8 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
       var t = $("#"+hour).val();
       console.log(t);
 
+      
+
       //crete an object with an hour and text
       //store that object in localStorage
 
@@ -100,8 +126,8 @@ currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
       // getItem needs setItem
     })
 
-function local(){
-  localStorage.setItem("textarea");
+    function local(){
+    localStorage.setItem("textarea");
         
         // retrieve task
         document.getElementById("edit").innerHTML = localStorage.getItem("textarea")
@@ -116,20 +142,7 @@ function local(){
         buildRow.appendChild(buildSave)
 
 
-        if (currentHour == i) {
-            present;
-            
-        } else if 
-            (currentHour < i) {
-            past;
-        
-
-        } else if 
-            ( i > currentHour) {
-            future;
-        
-        
-         } 
+       
 }
 
     /* ROW ORIGINAL CODE BLOCK
@@ -149,3 +162,17 @@ function local(){
         </div>
       </div>
     */
+
+    /* IF  color loop
+
+    if (currentHour == i) {
+          present;
+          
+        } else if (currentHour < i) {
+          past;
+      
+    
+        } else if ( i > currentHour) {
+          future;   
+        } 
+        */
