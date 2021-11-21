@@ -5,7 +5,7 @@ var todaysDate = moment().toDate();
 console.log(todaysDate)
 currentDay.text(moment(todaysDate).format("dddd, MMMM Do YYYY"));
 
-var currentHour = moment().
+// var currentHour = moment().
 // 24 hour format
 
 // if for loop 
@@ -32,30 +32,43 @@ var currentHour = moment().
 
     
 
-var i = moment().format('h a');
+//var i = moment().format('h a');
 
-    for (i = 8; i < 15; i++) {
+    for (var i = 8; i < 18; i++) {
         console.log(i)
 
         // ROW
 
-        var buildRow = document.createElement('row');
+        //var buildRow = document.createElement('row');
        
-        var buildCardA = buildRow.createElement('col');
-        buildCard.classList.add('col time-block card');
+        //var buildCardA = buildRow.createElement('col');
+        var buildCardA = $("<div>");
+        buildCardA.addClass('col-md-1 hour-text');
+        if(i<=12){
+          buildCardA.text(i + "AM")
+        }
+        else{
+          buildCardA.text((i-12) + "PM");
+        }
 
-        var buildHour = buildCard.createElement('hour');   
-        buildHour.classList.add('hour');
+        var buildHour = $('<textarea>');   
+        buildHour.addClass('col-md-10 time-block');
+        buildHour.attr("id", i);
 
-        var buildText = buildRow.createElement('col-10');
-        buildText.classList.add('textarea card') 
+        //var buildText = buildRow.createElement('col-10');
+        //buildText.classList.add('textarea card') 
 
         // create task input
 
-        var buildCardB = buildRow.createElement('col');
+        //var buildCardB = buildRow.createElement('col');
             
-        var buildSave = buildCard.createElement('button');
-        button.classList.add('saveBtn card');
+        var buildSave = $('<button>');
+        buildSave.addClass('saveBtn');
+        buildSave.text("Save");
+        buildSave.attr("data-time", i);
+
+
+        $("#time-row").append(buildCardA, buildHour, buildSave);
                 
         /* 
         
@@ -66,9 +79,28 @@ var i = moment().format('h a');
         }
         
         */
-        
+      // get local storage 
         // store task
-        localStorage.setItem("textarea");
+        
+    }
+   
+    $(document).on("click", ".saveBtn", function(){
+      console.log("inside button click");
+      var hour = $(this).attr("data-time");
+      console.log(hour);
+
+      var t = $("#"+hour).val();
+      console.log(t);
+
+      //crete an object with an hour and text
+      //store that object in localStorage
+
+      // local storage for every hour
+      // getItem needs setItem
+    })
+
+function local(){
+  localStorage.setItem("textarea");
         
         // retrieve task
         document.getElementById("edit").innerHTML = localStorage.getItem("textarea")
@@ -97,9 +129,7 @@ var i = moment().format('h a');
         
         
          } 
-    }
-   
-
+}
 
     /* ROW ORIGINAL CODE BLOCK
     
