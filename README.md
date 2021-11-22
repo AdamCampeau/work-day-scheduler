@@ -23,3 +23,5 @@ THEN the saved events persist
 Example:
 
 https://courses.bootcampspot.com/courses/981/files/936067/preview
+
+Note: At current time, work-day-scheduler incomplete, localStorage, hourly (i) not working correctly.
