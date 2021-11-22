@@ -64,7 +64,7 @@ var currentHour = moment(currentHour).format('h');
         
 
         var buildHour = $('<textarea>');   
-        buildHour.addClass('col-md-9 time-block');
+        buildHour.addClass('col-md-10 time-block');
         buildHour.attr("id", i);
 
         //var buildText = buildRow.createElement('col-10');
@@ -80,7 +80,7 @@ var currentHour = moment(currentHour).format('h');
           //buildSave.addClass('past');
           
         } else if (currentHour > i) {
-          buildCardA.addClass('past');
+          buildHour.addClass('past');
         } 
 
         // create task input
@@ -90,7 +90,7 @@ var currentHour = moment(currentHour).format('h');
         
             
         var buildSave = $('<button>');
-        buildSave.addClass('saveBtn');
+        buildSave.addClass('saveBtn col-md-1');
         buildSave.attr("data-time", i);
         buildSave.addClass("fas fa-save")
 
@@ -106,7 +106,7 @@ var currentHour = moment(currentHour).format('h');
         }
       
         */
-      // get local storage 
+        // get local storage 
         // store task
         //</br>
          
@@ -141,7 +141,7 @@ var currentHour = moment(currentHour).format('h');
         // save task when saveBtn clicked
         //document.getElementById("saveBtn").addEventListener("click", "textarea");
 
-    row.appendChild(buildCardA)
+    buildRow.appendChild(buildCardA)
     buildRow.appendChild(buildHour)
     buildRow.appendChild(buildText)
     buildRow.appendChild(buildCardB)
